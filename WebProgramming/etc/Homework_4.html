@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Homework 4</title>
+    <meta charset="utf-8" />
+    <style>
+        * {
+            color: white;
+            background-color: black;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid white;
+            border-collapse: collapse;
+            padding: 0.4em;
+
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Aufgabe 1 – PHP – Body Mass Index (BMI)</h1>
+        <p>
+            <span>Erstellen Sie ein Formular, das zwei Eingabefelder (zur Erfassung von Körpergröße und Körpergewicht) umfasst.</span> <br>
+            <span>Formatieren Sie das Formular mit Ihnen bekanntem HTML/CSS-Code. Validieren Sie die Eingaben sowohl client- als auch serverseitig.</span> <br>
+            <span>Erstellen Sie eine Funktion (bmi_calc), die auf Grundlage der eingegebenen Werte den BMI errechnet und ausgibt [BMI = Körpergewicht / (Körpergröße in m)²].</span> <br>
+            <span>Runden Sie den errechneten BMI auf eine Nachkommastelle.</span> <br>
+            <span>Formatieren Sie die Text-Ausgabe „Ihr BMI beträgt X“ gemäß folgendem Schema:</span>
+        </p>
+
+        <table>
+            <tr>
+                <th>Errechneter BMI</th>
+                <th>Farbe</th>
+            </tr>
+            <tr>
+                <td>≤ 18.5</td>
+                <td style="color: blue;">blue</td>
+            </tr>
+            <tr>
+                <td>18.6-25.0</td>
+                <td style="color: green;">green</td>
+            </tr>
+            <tr>
+                <td>25.1-30.0</td>
+                <td style="color: yellow;">yellow</td>
+            </tr>
+            <tr>
+                <td>> 30.0</td>
+                <td style="color: red;">red</td>
+            </tr>
+        </table>
+
+        <p>Erstellen Sie dazu ebenfalls eine Funktion (bmi_color).</p>
+    </div>
+
+    <div>
+        <h1>Aufgabe 2 – Datenbanken</h1>
+        <p>Aufbauend auf Aufgabe 2 von Homework 3, wie lauten die SQL-Befehle, die folgende Ergebnisse liefern:</p>
+        <ul>
+            <li>Liste aller Studenten, die eine Würzburger Telefonvorwahl haben</li>
+            <li>Liste mit der Anzahl der Teilnehmer je Klausur</li>
+            <li>Liste mit der Anzahl der Studenten je First-Level-Domain des E-Mail-Providers (.de, .com)</li>
+        </ul>
+    </div>
+</body>
+
+</html>
