@@ -55,23 +55,43 @@
 </head>
 
 <body>
+    <nav>
+        <ul>
+            <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=11578">Home</a></li>
+            <li><a href="">Aufgabe</a>
+                <ul class="hide">
+                    <li><a href="./homework_1.html">Homework 1</a></li>
+                    <li><a href="./homework_2.html">Homework 2</a></li>
+                    <li><a href="./homework_3.html">Homework 3</a></li>
+                    <li><a href="./homework_4.html">Homework 4</a></li>
+                    <li><a href="./homework_5.html">Homework 5</a></li>
+                </ul>
+            </li>
+            <li><a id="button" href="" data-primary-target="./solution/" data-secondary-target="https://github.com/Antreeas/VHB-WebProgramming/tree/master/VHB-WebProgramming/solution">Lösung</a></li>
+            <li><a href="mailto:max.mustermann@gmail.com">Kontakt</a></li>
+        </ul>
+    </nav>
 
+    <script>
+        $(document).ready(function () {
+            $('#button').on('click', function (e) {
+                e.preventDefault();
+                var targets = [
+                    $(e.target).data('primary-target'),
+                    $(e.target).data('secondary-target')
+                ];
+                $(targets).each(function (key, target) {
+                    $.ajax({
+                        type: 'HEAD',
+                        url: target,
+                        success: function () {
+                            window.location = target;
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
-<nav>
-    <ul>
-        <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=11578">Home</a></li>
-        <li><a href="">Aufgabe</a>
-            <ul class="hide">
-                <li><a href="./homework_1.html">Homework 1</a></li>
-                <li><a href="./homework_2.html">Homework 2</a></li>
-                <li><a href="./homework_3.html">Homework 3</a></li>
-                <li><a href="./homework_4.html">Homework 4</a></li>
-                <li><a href="./homework_5.html">Homework 5</a></li>
-            </ul>
-        </li>
-        <li><a href="./solution/">Lösung</a></li>
-        <li><a href="mailto:max.mustermann@gmail.com">Kontakt</a></li>
-    </ul>
-</nav>
 
 </html>
