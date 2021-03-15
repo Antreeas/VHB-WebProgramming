@@ -51,6 +51,10 @@
         nav .hide {
             display: none;
         }
+
+        a {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -67,29 +71,27 @@
                     <li><a href="./homework_5.html">Homework 5</a></li>
                 </ul>
             </li>
-            <li><a id="button" href="" data-primary-target="./solution/" data-secondary-target="https://github.com/Antreeas/VHB-WebProgramming/tree/master/VHB-WebProgramming/solution">Lösung</a></li>
+            <li><a id="button">Lösung</a></li>
             <li><a href="mailto:max.mustermann@gmail.com">Kontakt</a></li>
         </ul>
     </nav>
 
     <script>
-        $(document).ready(function () {
-            $('#button').on('click', function (e) {
-                e.preventDefault();
-                var targets = [
-                    $(e.target).data('primary-target'),
-                    $(e.target).data('secondary-target')
-                ];
-                $(targets).each(function (key, target) {
-                    $.ajax({
-                        type: 'HEAD',
-                        url: target,
-                        success: function () {
-                            window.location = target;
-                        }
-                    });
-                });
-            });
+        const buttonHTML = document.getElementById("button");
+
+        function urlExists(url) {
+            var http = new XMLHttpRequest();
+            http.open('HEAD', url, false);
+            http.send();
+            return http.status != 404;
+        }
+
+        buttonHTML.addEventListener("click", e => {
+            if (urlExists("./solution")) {
+                window.location.assign("./solution");
+            } else {
+                window.location.assign("https://github.com/Antreeas/VHB-WebProgramming/tree/master/VHB-WebProgramming/solution");
+            }
         });
     </script>
 </body>
